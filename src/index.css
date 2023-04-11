@@ -1,0 +1,129 @@
+/* @import "~@fontsource/montserrat/index.css";
+@import "~@fontsource/montserrat/300-italic.css"; */
+
+html {
+  font-size: 90%; /* default 16px 16x62.5=10 10px=1rem */
+  box-sizing: border-box;
+  
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  /* font-size: 1.6rem; */
+  font-family:  Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Layout */
+
+.webcontainer {
+  display: grid;
+  grid-template-areas: 
+    'header' 
+    'main' 
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem 1fr 0.5fr;
+  height:100%;
+}
+
+.header{
+  position: sticky;
+  grid-area: header;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 5px 6px -6px #77777750;
+  -moz-box-shadow: 0 5px 6px -6px #77777750;
+  box-shadow: 0 5px 6px -6px #77777750;
+  z-index: 1;
+}
+
+.main{
+  grid-area: main;
+  z-index: 0;
+  /* border: 1px solid red; */
+  position: relative;
+}
+
+.footer{
+  grid-area: footer;
+  z-index: 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+}
+
+#bg-video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100%;
+  position:static;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.bg-video-overlay {
+  position: absolute;
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;  
+  /* filter: blur(157px); */
+}
+
+.bg-video-front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  /* margin-top: -70px; */
+}
+
+.gradient-container {
+  position: inherit;
+  /* width: 100%;
+  height: 100%; */
+  /* left: 3px; */
+  /* top: 551.3px; */
+
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.carousel-container {
+  background: #f1f1f1;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 20rem;
+  min-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s cubic-brazier(0.39, 0.575, 0.565, 1);
+}
